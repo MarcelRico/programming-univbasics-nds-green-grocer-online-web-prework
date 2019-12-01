@@ -77,7 +77,7 @@ def apply_clearance(cart)
   cart.length.times do |idx|
     if(cart[idx][:clearance] == true)
       cart[idx][:price] -= (cart[idx][:price]*0.2)
-      cart[idx][:price].round(2)
+      cart[idx][:price] = cart[idx][:price].round(2)
     end
   end
   cart
