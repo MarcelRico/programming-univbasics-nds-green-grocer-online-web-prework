@@ -96,5 +96,9 @@ def checkout(cart, coupons)
   consolidated_cart = consolidate_cart(cart)
   consolidated_cart = apply_coupons(consolidated_cart,coupons)
   consolidated_cart = apply_clearance(consolidated_cart)
-  puts consolidated_cart
+  
+  consolidated_cart.length.times do |idx|
+    puts consolidated_cart[idx][:item]
+  end
+  
 end
