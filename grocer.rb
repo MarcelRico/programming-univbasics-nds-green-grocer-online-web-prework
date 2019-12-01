@@ -104,5 +104,10 @@ def checkout(cart, coupons)
     grand_total += (consolidated_cart[idx][:price]*consolidated_cart[idx][:count])
   end
   
+  if(grand_total > 100)
+    grand_total-=(grand_total*0.1)
+    grand_total = grand_total.round(2)
+  end
+  
   grand_total
 end
