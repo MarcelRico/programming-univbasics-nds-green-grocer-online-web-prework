@@ -104,5 +104,5 @@ def checkout(cart, coupons)
     grand_total += (consolidated_cart[idx][:price]*consolidated_cart[idx][:count])
   end
   
-  puts grand_total
+  grand_total
 end
