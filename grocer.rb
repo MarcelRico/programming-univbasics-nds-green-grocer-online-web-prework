@@ -93,12 +93,15 @@ def checkout(cart, coupons)
   # BEFORE it begins the work of calculating the total (or else you might have
   # some irritated customers
   
+  grand_total = 0
+  
   consolidated_cart = consolidate_cart(cart)
   consolidated_cart = apply_coupons(consolidated_cart,coupons)
   consolidated_cart = apply_clearance(consolidated_cart)
   
   consolidated_cart.length.times do |idx|
-    puts consolidated_cart[idx][:item]
+    grand_total += (consolidated_cart[idx][:price]*consolidated_cart[idx][:count])
   end
   
+  puts grand_total
 end
